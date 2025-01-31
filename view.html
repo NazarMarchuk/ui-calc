@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Diagram</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <form id="calcForm">
+
+        <div class="container">
+            <div class="image-container">
+                <img id="diagram" src="img/info/LR.png" alt="Diagram">
+                <input type="text" id="inputLength" class="input-overlay" placeholder="Length">
+                <input type="text" id="inputWidth" class="input-overlay" placeholder="Width">
+                <input type="text" id="inputRails" class="input-overlay" placeholder="Distance Between Rails">
+            </div>
+
+            <ul></ul>
+
+            <label for="rl-or-lr">Select Diagonal:</label>
+            <select id="rl-or-lr" onchange="updateImage()">
+                <option value="LR">Upper Left - Lower Right</option>
+                <option value="RL">Upper Right - Lower Left</option>
+            </select>
+
+            <input type="text" id="diagonal" name="diagonal" placeholder="Enter measured diagonal (short or long)" style="width: 100%; box-sizing: border-box;" required>
+
+            <div style="text-align: center; margin-top: 20px;">
+                <button type="submit" class="btn">Calculate</button>
+            </div>
+        </div>
+
+    </form>
+
+    <div class="results">
+        <p id="expected_diagonal"></p>
+        <bold id="adjust_message">Please input the data</bold>
+    </div>
+
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
